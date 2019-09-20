@@ -1,13 +1,17 @@
 import React from 'react';
-//import logo from './logo.svg';
-//import './App.css';
 import './scss/main.scss';
+import { HashRouter, Switch, Route } from "react-router-dom";
+import Home from  './components/Home';
 
 function App() {
   return (
-    <div>
-      Hello World !!!
-    </div>
+    <HashRouter>
+      <>
+        <Switch>
+          <Route exact path={`/`} component={Home}/>
+        </Switch>
+      </>
+    </HashRouter>
   );
 }
 

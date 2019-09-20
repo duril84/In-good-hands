@@ -1,0 +1,19 @@
+.home_container {
+  display: block;
+  margin: 0 auto;
+  width: 1900px;
+  overflow: hidden;
+  //border: 1px solid red;
+}
+
+.decoration_img {
+  background-image: url('../assets/Decoration.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 253px;
+  height: 33px;
+}
+
+@import './header/header';
+@import './header/navigation';
+@import './header/button';
