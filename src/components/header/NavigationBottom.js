@@ -1,13 +1,22 @@
 import React, { Component } from 'react';
 import Button from './Button';
 import { Link } from 'react-scroll';
+import styled from 'styled-components';
+
+const StyledNavigationBottom = styled.div`
+  display: flex;
+  ul {
+    display: flex;
+    list-style: none;
+  }
+`;
 
 class NavigationBottom extends Component {
   state = {  }
   render() { 
     return (
-      <div className="header_navigation-bottom">
-        <ul className="header_navigation-bottom-list">
+      <StyledNavigationBottom>
+        <ul>
           <li>
             <Link>
               <Button>Start</Button>
@@ -34,7 +43,7 @@ class NavigationBottom extends Component {
             </Link>
           </li>
         </ul>
-      </div>
+      </StyledNavigationBottom>
     );
   }
 }

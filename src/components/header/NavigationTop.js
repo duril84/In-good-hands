@@ -1,21 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Button from './Button';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
-class NavigationTop extends Component {
-  state = {  }
-  render() { 
-    return (
-      <div className="header_navigation-top">
+const StyledNavigationTop = styled.div`
+  display: flex;
+  padding: 0 20px;
+`;
+
+const NavigationTop = () => {
+     return (
+      <StyledNavigationTop>
         <Link exact to={`/logowanie`}>
-          <Button>Zaloguj</Button>
+          <Button lightButton>Zaloguj</Button>
         </Link>
         <Link exact to={`/rejestracja`}>
-          <Button>Załóż konto</Button>
+          <Button lightButton>Załóż konto</Button>
         </Link>
-      </div>
+      </StyledNavigationTop>
     );
-  }
 }
- 
+
 export default NavigationTop;
