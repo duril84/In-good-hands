@@ -27,7 +27,7 @@ class Home extends Component {
         <HomeHeader />
         <HomeThreeColumns />
         <HomeSimpleSteps />
-        <HomeAboutUs />
+        <HomeAboutUs/>
         <HomeWhoWeHelp />
         <HomeContact />
         <HomeFooter />

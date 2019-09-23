@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import Button from './Button';
+//import * as Scroll from 'react-scroll';
+//import { Link, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 import { Link } from 'react-scroll';
+ 
 import styled from 'styled-components';
 
 const StyledNavigationBottom = styled.div`
@@ -13,22 +16,57 @@ const StyledNavigationBottom = styled.div`
 
 class NavigationBottom extends Component {
   state = {  }
+
+  // componentDidMount() {
+ 
+  //   Events.scrollEvent.register('begin', function(to, element) {
+  //     console.log("begin", arguments);
+  //   });
+ 
+  //   Events.scrollEvent.register('end', function(to, element) {
+  //     console.log("end", arguments);
+  //   });
+  //   scrollSpy.update();
+  //  }
+  // componentWillUnmount() {
+  //   Events.scrollEvent.remove('begin');
+  //   Events.scrollEvent.remove('end');
+  // }
+  // scrollToTop() {
+  //   scroll.scrollToTop();
+  // }
+  // scrollToBottom() {
+  //   scroll.scrollToBottom();
+  // }
+  // scrollTo() {
+  //   scroll.scrollTo(100);
+  // }
+  // scrollMore() {
+  //   scroll.scrollMore(100);
+  // }
+  // handleSetActive(to) {
+  //   console.log(to);
+  // }
+
+
+
   render() { 
     return (
+      <>
       <StyledNavigationBottom>
         <ul>
           <li>
-            <Link>
+            <Link to="Home" spy={true} smooth={true} duration={700}>
               <Button>Start</Button>
             </Link>
           </li>
           <li>
-            <Link>
+            <Link to="SimpleSteps" spy={true} smooth={true} duration={700}>
               <Button>O co chodzi?</Button>
             </Link>
           </li>
           <li>
-            <Link>
+            <Link to="AboutUs" spy={true} smooth={true} duration={700}>
               <Button>O nas</Button>
             </Link>
           </li>
@@ -44,6 +82,8 @@ class NavigationBottom extends Component {
           </li>
         </ul>
       </StyledNavigationBottom>
+      {/* <Element name="HomeAboutUs"><HomeAboutUs/></Element> */}
+      </>
     );
   }
 }

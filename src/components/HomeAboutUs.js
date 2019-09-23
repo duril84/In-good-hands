@@ -64,7 +64,7 @@ class HomeAboutUs extends Component {
   state = {  }
   render() { 
     return (
-      <Container>
+      <Container name="AboutUs">
         <AboutUs>
           <Title>Onas</Title>
           <Decoration />

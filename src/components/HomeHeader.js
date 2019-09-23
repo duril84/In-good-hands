@@ -3,7 +3,7 @@ import Navigation from './header/Navigation';
 import styled from 'styled-components';
 import img from './../assets/Home-Hero-Image.jpg';
 
-const HeaderContainer = styled.div`
+const Container = styled.div`
   display: flex;
   justify-content: space-between;
   //transform: translate(-483px, 0px);
@@ -26,10 +26,10 @@ class HomeHeader extends Component {
   state = {  }
   render() { 
     return (
-      <HeaderContainer>
+      <Container name="Home">
         <HeaderImg />
         <Navigation />
-      </HeaderContainer>
+      </Container>
     );
   }
 }
