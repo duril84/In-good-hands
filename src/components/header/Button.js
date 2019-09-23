@@ -6,6 +6,7 @@ const Button = styled.button`
   background-color: transparent;
   font-size: ${props => props.lightButton ? '0.7rem' : '0.92rem' };
   font-size: ${props => props.mainHeader && '1.9rem' };
+  font-size: ${props => props.help && '1.4rem' };
   font-weight: ${props => props.mainHeader && '200' };
   margin: ${props => props.mainHeader && '0 15px' }
   width: ${props => props.mainHeader && '280px' };
