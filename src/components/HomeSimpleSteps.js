@@ -53,6 +53,7 @@ const Icon = styled.div`
   width: 100px;
   height: 45px;
   padding-bottom: 33px;
+  transform: translateX(10%);
 `;
 const Info = styled.div`
   width: 50%;
