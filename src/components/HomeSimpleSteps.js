@@ -72,7 +72,7 @@ class HomeSimpleSteps extends Component {
   state = {  }
   render() { 
     return (
-      <Container>
+      <Container name="SimpleSteps">
         <Title>Wystarczą 4 proste kroki</Title>
         <Decoration />
 

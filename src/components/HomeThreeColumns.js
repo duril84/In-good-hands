@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import img from './../assets/3-Columns-Background.png';
 
-const BackgroundImg = styled.div`
+const Container = styled.div`
   background-image: url(${img});
   width: 100%;
   height: 350px;
@@ -37,7 +37,7 @@ class HomeThreeColumns extends Component {
   state = {  }
   render() { 
     return (
-      <BackgroundImg>
+      <Container name="ThreeColumns">
         <Column>
           <ColumnNumber>10</ColumnNumber>
           <ColumnTitle>ODDANYCH WORKÓW</ColumnTitle>
@@ -53,7 +53,7 @@ class HomeThreeColumns extends Component {
           <ColumnTitle>ZORGANIZOWANY ZBIÓREK</ColumnTitle>
           <ColumnDescription>Lorem ipsum dolor sit amet, consectetur adipisc Pellentesque vel enim a elit viverra elementuma. Aliquam erat volutpat.</ColumnDescription>
         </Column>
-      </BackgroundImg>
+      </Container>
     );
   }
 }
