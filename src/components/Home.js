@@ -16,7 +16,7 @@ const HomeContainer = styled.div`
   margin: 0 auto;
   width: 90vw;
   overflow: hidden;
-  border: 1px solid red;
+  // border: 1px solid red;
 `;
 
 class Home extends Component {

@@ -71,7 +71,7 @@ class NavigationBottom extends Component {
             </Link>
           </li>
           <li>
-            <Link>
+            <Link to="WhoWeHelp" spy={true} smooth={true} duration={700}>
               <Button>Fundacja i organizacje</Button>
             </Link>
           </li>
@@ -82,7 +82,6 @@ class NavigationBottom extends Component {
           </li>
         </ul>
       </StyledNavigationBottom>
-      {/* <Element name="HomeAboutUs"><HomeAboutUs/></Element> */}
       </>
     );
   }
