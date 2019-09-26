@@ -76,7 +76,7 @@ class NavigationBottom extends Component {
             </Link>
           </li>
           <li>
-            <Link>
+            <Link to="Contact" spy={true} smooth={true} duration={700} >
               <Button>Kontakt</Button>
             </Link>
           </li>
