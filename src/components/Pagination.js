@@ -16,7 +16,7 @@ const Li = styled.li`
   width: 100%;
 `
 
-const PageNumber = styled.a`
+const PageNumber = styled(Link)`
   font-size: 1.5rem;
   font-weight: 100;
   text-decoration: none;
@@ -47,11 +47,9 @@ const Pagination = ({postsPerPage, totalPosts, paginate}) => {
       <Container>
         {pageNumbers.map(number => (
           <Li key={number}>
-            <Link to="WhoWeHelp" spy={true} smooth={true} duration={0}>  
-              <PageNumber onClick={() => paginate(number) } href="!#">
-                {number}
-              </PageNumber>
-            </Link>
+            <PageNumber to="WhoWeHelp" spy={false} smooth={true} duration={0} onClick={() => paginate(number) } href="!#">  
+              {number}
+            </PageNumber>
           </Li>
         ))}
       </Container>
