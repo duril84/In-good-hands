@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import React, { useState, useEffect } from 'react';
 import { ReactComponent as Decoration } from "../assets/Decoration.svg";
 import Navigation from './header/Navigation';
+import { Link } from 'react-router-dom';
 
 const Container = styled.div`
   width: 90vw;
@@ -101,11 +102,6 @@ const HomeHeader = () => {
     return password.length > 5 ? true : false;
   }
 
-  const registration = () =>{
-    setCorrectEmail(validateEmail(email));
-    setCorrectPassword(validatePassword(password));
-  }
-
   const login = () =>{
     setCorrectEmail(validateEmail(email));
     setCorrectPassword(validatePassword(password));
@@ -145,7 +141,9 @@ const HomeHeader = () => {
 
       </Login>
       <Buttons>
-        <Button onClick={() => registration()} >Załóż konto</Button>
+        <Link exact to={`/rejestracja`}>
+          <Button>Załóż konto</Button>
+        </Link>
         <Button onClick={() => login()}>Zaloguj</Button>
       </Buttons>
       
