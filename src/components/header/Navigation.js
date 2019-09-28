@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import NavigationTop from './NavigationTop';
 import NavigationBottom from './NavigationBottom';
-import HeaderMain from './HeaderMain';
 import styled from 'styled-components';
 
 const StyledNavigation = styled.div`
@@ -11,6 +10,7 @@ const StyledNavigation = styled.div`
   width: 60vw;
   position: absolute;
   right: 10vh;
+  top: 0;
 `;
 
 class Navigation extends Component {
@@ -20,7 +20,7 @@ class Navigation extends Component {
       <StyledNavigation>
         <NavigationTop />
         <NavigationBottom />
-        <HeaderMain />
+        { this.props.children }
       </StyledNavigation>
     );
   }

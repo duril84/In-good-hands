@@ -56,7 +56,7 @@ class NavigationBottom extends Component {
       <StyledNavigationBottom>
         <ul>
           <li>
-            <Link to="Home" spy={true} smooth={true} duration={700}>
+            <Link to="ThreeColumns" spy={true} smooth={true} duration={700}>
               <Button>Start</Button>
             </Link>
           </li>
