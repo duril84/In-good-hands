@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import HomeHeader from './HomeHeader';
+import React from 'react';
 import HomeThreeColumns from './HomeThreeColumns';
 import HomeSimpleSteps from './HomeSimpleSteps';
 import HomeAboutUs from './HomeAboutUs';
@@ -9,29 +8,25 @@ import styled from 'styled-components';
 
 
 const HomeContainer = styled.div`
-  
   display: flex;
   flex-direction: column;
   margin: 0 auto;
   width: 90vw;
   overflow: hidden;
+  
   // border: 1px solid red;
 `;
+export default props => {
+  return (
+    <HomeContainer>
+      { props.children }
+      <HomeThreeColumns />
+      <HomeSimpleSteps />
+      <HomeAboutUs/>
+      <HomeWhoWeHelp />
+      <HomeContact />
+    </HomeContainer>
+  );
 
-class Home extends Component {
-  state = {  }
-  render() { 
-    return (
-      <HomeContainer>
-        <HomeHeader />
-        <HomeThreeColumns />
-        <HomeSimpleSteps />
-        <HomeAboutUs/>
-        <HomeWhoWeHelp />
-        <HomeContact />
-      </HomeContainer>
-    );
-  }
 }
  
-export default Home;

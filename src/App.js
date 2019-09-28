@@ -1,6 +1,7 @@
 import React from 'react';
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import Home from  './components/Home';
+import HomeHeader from './components/HomeHeader';
 import Login from  './components/Login';
 import Register from  './components/Register';
 import { createGlobalStyle } from "styled-components";
@@ -19,13 +20,29 @@ function App() {
         
         <Router>
           <Switch>
-            <Route exact path={`/`} component={Home}/>
-            <Route path={`/logowanie`} component={Login}/>
-            <Route path={`/rejestracja`} component={Register}/>
+            <Route exact path={`/`} 
+              component={ props => (
+                <Home>
+                  <HomeHeader />
+                </Home>
+            )}/>
+            <Route path={`/logowanie`}
+              component={ props => (
+                <Home>
+                  <Login />
+                </Home>
+            )}/>
+            <Route path={`/rejestracja`} 
+              component={ props => (
+                <Home>
+                  <Register />
+                </Home>
+            )}/>
           </Switch>
           </Router>
         </>
-  
+    
+
   );
 }
 

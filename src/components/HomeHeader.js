@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import Navigation from './header/Navigation';
 import styled from 'styled-components';
 import img from './../assets/Home-Hero-Image.jpg';
+import HeaderMain from './header/HeaderMain';
 
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
-  //transform: translate(-483px, 0px);
-  // height: 75vh;
   overflow: hidden;
+  height: 100vh;
 `;
 
 const HeaderImg = styled.div`
@@ -28,7 +28,9 @@ class HomeHeader extends Component {
     return (
       <Container name="Home">
         <HeaderImg />
-        <Navigation />
+        <Navigation>
+          <HeaderMain />
+        </Navigation>
       </Container>
     );
   }
