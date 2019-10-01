@@ -4,6 +4,9 @@ import React, { useState, useEffect } from 'react';
 import { ReactComponent as Decoration } from "../assets/Decoration.svg";
 import Navigation from './header/Navigation';
 import { Link } from 'react-router-dom';
+import { usersFetched, userLogin } from './../actions';
+import { connect } from "react-redux";
+
 
 const Container = styled.div`
   width: 90vw;
@@ -86,12 +89,11 @@ const ValidateData = styled.div`
   align-text: left;
 `;
 
-const HomeHeader = () => {
+const HomeHeader = props => {
   const [email,setEmail] = useState('');
   const [password,setPassword] = useState('');
   const [correctEmail,  setCorrectEmail] = useState(true);
   const [correctPassword,  setCorrectPassword] = useState(true);
-
 
   const validateEmail = email => {
     const reg = /\S+@\S+\.\S+/;
@@ -105,10 +107,28 @@ const HomeHeader = () => {
   const login = () =>{
     setCorrectEmail(validateEmail(email));
     setCorrectPassword(validatePassword(password));
-    console.log(correctPassword);
+    console.log(props.pageStore.users);
+    if ( props.pageStore.users.find(user => (user.email === email && user.password === password ) ) ) {
+      console.log('LogIn');
+      props.userLogin(email);
+    } else {
+      console.log('Błędny login lub hasło');
+    }
+    console.log(props);
   }
 
+  const loadUsers = () => {
+    fetch(`http://localhost:3004/users`)
+    .then(resp => resp.json())
+    .then(data => {
+      props.usersFetched(data);
+    })
+    .catch(err => console.error(err));
+    
+  }
+  
   useEffect(()=> {
+    loadUsers();
   }, []);
 
 
@@ -145,11 +165,23 @@ const HomeHeader = () => {
           <Button>Załóż konto</Button>
         </Link>
         <Button onClick={() => login()}>Zaloguj</Button>
+        {/* <Button onClick={() => stateShow()}>State próba</Button> */}
       </Buttons>
       
     </Container>
   );
   
 }
- 
-export default HomeHeader;
+
+const mapStateToProps = (state) => {
+  return {
+    pageStore: state.pageStore
+  }
+};
+
+//const mapDispatchToProps = dispatch => ({ fetch: data => dispatch(usersFetched(data)) });
+const mapDispatchToProps = { usersFetched, userLogin };
+
+const HHContainer = connect(mapStateToProps, mapDispatchToProps)(HomeHeader);
+
+export default HHContainer;
