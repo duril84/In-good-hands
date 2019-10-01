@@ -111,7 +111,6 @@ const Register = () => {
     return repeatedPassword === password;
   }
 
-
   const registration = () =>{
     setCorrectEmail(validateEmail(email));
     setCorrectPassword(validatePassword(password));

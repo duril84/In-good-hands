@@ -150,7 +150,7 @@ const HomeContact = () => {
   const [correctEmail,  setCorrectEmail] = useState(true);
   const [correctMessage,  setCorrectMessage] = useState(true);
   const [status, setStatus] = useState('error');
-  const [errors, setErrors] = useState(null);
+  const [setErrors] = useState(null);
 
   const validateName = name => {
     const reg = /^[a-zA-Z]+$/;
